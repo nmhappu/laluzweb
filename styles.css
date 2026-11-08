@@ -208,7 +208,7 @@ h2 { font-size: clamp(28px, 4.4vw, 42px); font-weight: 600; }
 
 /* Contact */
 .contact { display: grid; gap: 12px; }
-@media (min-width: 760px) { .contact { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 760px) { .contact { grid-template-columns: repeat(6, 1fr); } .contact__item { grid-column: span 2; } .contact__item:nth-child(n+4) { grid-column: span 3; } }
 .contact__item {
   display: grid; gap: 6px; padding: 22px; border-radius: var(--radius);
   background: var(--surface); border: 1px solid var(--line);

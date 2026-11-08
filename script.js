@@ -4,13 +4,16 @@
    ========================================================= */
 const CONFIG = {
   // Phone in international format, digits only, e.g. "919876543210"
-  phone: "",
+  phone: "917907551379",
   // WhatsApp number in the same format (often the same as phone)
   whatsapp: "",
   // Shown on the page under "visit"
   address: "",
   // Google Maps share link, e.g. "https://maps.app.goo.gl/xxxx"
   mapsUrl: "",
+  // Instagram username (without @) and YouTube channel link
+  instagram: "laluzgarage",
+  youtube: "https://youtube.com/@laluzgarage",
   // Brands sold at Prince Traders, e.g. ["Brand A", "Brand B"]
   brands: [],
   // Photos placed in the /assets folder, e.g. { src: "assets/showroom.jpg", alt: "Prince Traders showroom" }
@@ -31,6 +34,8 @@ const CONFIG = {
   setText("phoneLabel", pretty(CONFIG.phone));
   setText("whatsappLabel", pretty(CONFIG.whatsapp));
   setText("address", CONFIG.address);
+  setText("instagramLabel", CONFIG.instagram && "@" + CONFIG.instagram);
+  setText("youtubeLabel", CONFIG.youtube && "@" + CONFIG.youtube.split("@").pop());
   setText("brands", CONFIG.brands.join(" · "));
 
   const link = (name, href) => {
@@ -47,6 +52,8 @@ const CONFIG = {
   link("phone", CONFIG.phone && `tel:+${CONFIG.phone}`);
   link("whatsapp", CONFIG.whatsapp && `https://wa.me/${CONFIG.whatsapp}`);
   link("maps", CONFIG.mapsUrl);
+  link("instagram", CONFIG.instagram && `https://instagram.com/${CONFIG.instagram}`);
+  link("youtube", CONFIG.youtube);
 
   // Gallery
   const gallery = $("[data-gallery]");
